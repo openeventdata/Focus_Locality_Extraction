@@ -4,7 +4,8 @@
 
 @author: maryam
 """
-import gensim, nltk
+import gensim
+import nltk
 import numpy as np
 import sys
 from nltk.corpus import stopwords
