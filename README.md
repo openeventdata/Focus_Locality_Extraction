@@ -14,5 +14,5 @@ In every moment, several events are happening all over the world, and they are b
 
 This task is extracting geolocation from text and disambiguating the geolocation names. Geoparsers are Natural Language Processing (NLP) systems designed to analyze unstructured text in order to extract occurrences of location entities and place names and to resolve their ambiguities. Homographs and toponyms pose well-known problems in the process of geo-tagging news articles.
 
-Here we compared different geoparsers performance with each other for English dataset. 
+Here we compare different geoparsers performance with each other for English dataset. 
 
