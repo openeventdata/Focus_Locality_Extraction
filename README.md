@@ -1,13 +1,18 @@
+# Geolocation Extraction
+
+We have done couple of researches here. 
+
+1- Focus locality extraction
+2- Geotagging and Geoparsing 
+
+
 # Focus_Locality_Extraction
 
-This code is developed to extract focus locality from the news stories. 
+In every moment, several events are happening all over the world, and they are being reported by local or international news agencies. Automatic geolocation information extraction is vital to detect and analyze the impact of these events. We study extracting focus geolocations automatically from unstructured text-based news reports. The focus geolocation for a given news report is a location where an event mentioned in the report has happened. 
 
-In order to run this program, you need to instal "nltk" at first. 
-```
-sudo pip install -U nltk
-```
-As an example to run the program, you can input the following command: 
+# Geotagging and Geoparsing
 
-```
-python FocusLocality.py "92 words 20 De cember 2013 00:25 Agence France Presse AFPR English Four people including the mayor of a southern Philippine town were killed Friday in an ambush at Manila airport, its general manager said. "The mayor and his family and some security escorts were attacked," Manila airport general manager Angel Honrado told reporters, adding one of the dead was the mayor of Labangan town. Ukol Talumpa, a member of the political opposition, won a hotly contested electoral contest for mayor of Labangan in last May's elections."
-```
+This task is extracting geolocation from text and disambiguating the geolocation names. Geoparsers are Natural Language Processing (NLP) systems designed to analyze unstructured text in order to extract occurrences of location entities and place names and to resolve their ambiguities. Homographs and toponyms pose well-known problems in the process of geo-tagging news articles.
+
+Here we compared different geoparsers performance with each other for English dataset. 
+
