@@ -6,7 +6,7 @@ We have done couple of researches here:
 2- Geotagging and Geoparsing 
 
 
-# Focus_Locality_Extraction
+# Focus Locality Extraction
 
 In every moment, several events are happening all over the world, and they are being reported by local or international news agencies. Automatic geolocation information extraction is vital to detect and analyze the impact of these events. We study extracting focus geolocations automatically from unstructured text-based news reports. The focus geolocation for a given news report is a location where an event mentioned in the report has happened. 
 
