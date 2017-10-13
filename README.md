@@ -1,6 +1,6 @@
 # Geolocation Extraction
 
-We have done couple of researches here. 
+We have done couple of researches here:
 
 1- Focus locality extraction
 2- Geotagging and Geoparsing 
