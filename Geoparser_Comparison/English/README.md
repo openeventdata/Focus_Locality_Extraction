@@ -26,7 +26,7 @@ All data are provided in "data" folder. You need just run "method.py" in python 
 In order to rerun geoparsers, you neead just to run its code from the main folder or in "method.py" 
 
 ## Reference
-
+```
 @article{gritta2017s,
   title={What’s missing in geographical parsing?},
   author={Gritta, Milan and Pilehvar, Mohammad Taher and Limsopatham, Nut and Collier, Nigel},
@@ -35,3 +35,4 @@ In order to rerun geoparsers, you neead just to run its code from the main folde
   year={2017},
   publisher={Springer}
 }
+```
