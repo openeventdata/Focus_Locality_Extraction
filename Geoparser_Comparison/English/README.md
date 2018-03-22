@@ -24,3 +24,14 @@ You should have some basic Python libraries like Numpy, NLTK, Matplotlib (if you
 All data are provided in "data" folder. You need just run "method.py" in python to get the evaluations. 
 
 In order to rerun geoparsers, you neead just to run its code from the main folder or in "method.py" 
+
+## Reference
+
+@article{gritta2017s,
+  title={What’s missing in geographical parsing?},
+  author={Gritta, Milan and Pilehvar, Mohammad Taher and Limsopatham, Nut and Collier, Nigel},
+  journal={Language Resources and Evaluation},
+  pages={1--21},
+  year={2017},
+  publisher={Springer}
+}
