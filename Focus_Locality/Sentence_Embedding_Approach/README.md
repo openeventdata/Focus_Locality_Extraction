@@ -33,3 +33,13 @@ To apply bias correction, you can use main in the Bias Correction folder.
   publisher={MIT press}
 }
 ```
+```
+@inproceedings{imani2017focus,
+  title={Focus location extraction from political news reports with bias correction},
+  author={Imani, Maryam Bahojb and Chandra, Swarup and Ma, Samuel and Khan, Latifur and Thuraisingham, Bhavani},
+  booktitle={Big Data (Big Data), 2017 IEEE International Conference on},
+  pages={1956--1964},
+  year={2017},
+  organization={IEEE}
+}
+```
