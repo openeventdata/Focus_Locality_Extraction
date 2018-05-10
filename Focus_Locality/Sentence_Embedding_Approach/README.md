@@ -5,13 +5,14 @@ The idea of the code is proposed in the paper "A Simple but Tough-to-Beat Baseli
 The customized code is written in python and requires numpy, nltk, sklearn, and gensim. 
 
 To run the code and extract the feature vector for each sentence, you need training and testing files and their labels' file.
-Each training or testing file contains a sentence per line and its relevant lable in the seperate label file. 
+Each training or testing file contains a sentence per line and its relevant lable in the seperate label file. Then you can use any classifier to train a model based on training data, and evaluate it on test data. 
+
+You need to set some parameters in main.py file and related files. 
 
 ```
-python SIF_Processing.py <alpha> <path/to/word2vec_model> <trainFile> <testFile> <trainLabelFile> <testLabelFile>
+python main.py
 ```
 
-Then you can use any classifier to train a model based on training data, and evaluate it on test data. 
 
 To apply bias correction, you can use main in the Bias Correction folder. 
 
