@@ -8,20 +8,28 @@ Created on Wed Apr 25 12:12:20 2018
 import SIFpreprocessing
 import SentenceExtraction
 import Classification_SVM
-import PostEvaluationProfile
+#import PostEvaluationProfile
 
 
-pathGT = '/data/maryam/Documents/Geolocation11272017/Spanish_PDF/PDF_JSON/MunicipalitFiltered.txt'
-pathR = '/data/maryam/Documents/Geolocation11272017/Spanish_PDF/PDF_JSON/StoryFiltered.txt'
+pathGTtrain = 'example1/PDF_JSON/MunicipalitFiltered.txt' #locality names in each row
+pathRtrain = 'example1/StoryFiltered.txt' #News story in each row
+
+pathGTtest = 'example2/PDF_JSON/MunicipalitFiltered.txt' #locality names in each row
+pathRtest = 'example2/StoryFiltered.txt' #News story in each row
+
+'''
+you should set the path of NER in "SentenceExtraction.py" file
+and set the path of word2vec or fastVec in "SIFpreprocessing.py" file
+'''
 
 lang = 'es'
-NER = 'Mitie' #Stanford or Mitie 
+NER = 'Mitie' #Stanford or Mitie  
 
-SentenceListTrain, LblListTrain, DocTrain, LocTrain = SentenceExtraction.main(pathGT, pathR, NER, lang)
+SentenceListTrain, LblListTrain, DocTrain, LocTrain = SentenceExtraction.main(pathGTtrain, pathRtrain, NER, lang)
 embTrain, lblTrian = SIFpreprocessing.main(0.01, lang, SentenceListTrain, LblListTrain)
 
 
-SentenceListTest, LblListTest, DocTest, LocTest = SentenceExtraction.main(pathGT, pathR, NER, lang)
+SentenceListTest, LblListTest, DocTest, LocTest = SentenceExtraction.main(pathGTtest, pathRtest, NER, lang)
 embTest, lblTest = SIFpreprocessing.main(0.01, lang, SentenceListTest, LblListTest)
 
 
@@ -31,5 +39,5 @@ predictedResult = Classification_SVM.evaluateModel(embTest, lblTest, model)
 print predictedResult
 
 
-accuracy = PostEvaluationProfile.integrateSentences(predictedResult, DocTest, LocTest)
-print accuracy
+#accuracy = PostEvaluationProfile.integrateSentences(predictedResult, DocTest, LocTest)
+#print accuracy
