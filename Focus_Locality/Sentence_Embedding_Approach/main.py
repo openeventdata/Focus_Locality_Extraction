@@ -39,5 +39,5 @@ predictedResult = Classification_SVM.evaluateModel(embTest, lblTest, model)
 print predictedResult
 
 
-#accuracy = PostEvaluationProfile.integrateSentences(predictedResult, DocTest, LocTest)
-#print accuracy
+accuracy = PostEvaluationProfile.integrateSentences(predictedResult, DocTest, LocTest, pathGTtest)
+print accuracy
