@@ -1,6 +1,6 @@
 # Profile 
 
-You can run the following code to use Profile for the real news articles (which their primary focus location are not provided). 
+You can run the following code to use Profile for the real news articles (in which the primary focus locations are not provided). 
 
 
 ```Python 
