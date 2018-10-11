@@ -27,7 +27,7 @@ elif lang == 'ar':
     word2vec_Dictionary.apply_transform('./fastText_multilingual/alignment_matrices/ar.txt')
 
 # load model 
-model = "model_"+lang+".sav"
+model = "./model/model_"+lang+".sav"
 loaded_model = pickle.load(open(model, 'rb'))
 
 print( Profile.main(lang, NER, TextTest, word2vec_Dictionary, loaded_model) ) 
