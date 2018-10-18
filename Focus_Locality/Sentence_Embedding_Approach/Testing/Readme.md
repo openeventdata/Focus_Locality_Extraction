@@ -10,7 +10,7 @@ import Profile
 
 
 # define the news language 
-lang = en
+lang = 'en'
 NER = 'Mitie' #Stanford or Mitie or other
 
 if lang =='es': 
