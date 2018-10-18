@@ -11,6 +11,7 @@ import sys
 from nltk.corpus import stopwords
 from sklearn.decomposition import TruncatedSVD
 
+np.seterr(divide='ignore', invalid='ignore')
 #reload(sys)
 #sys.setdefaultencoding("utf-8")
 
