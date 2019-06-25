@@ -8,6 +8,7 @@ from __future__ import division
 from nltk.tag import StanfordNERTagger
 import sys, os
 import json
+sys.path.append("/home/ahalt/MITIE/mitielib")
 from mitie import *
 from polyglot.text import Text
 
@@ -17,7 +18,6 @@ from polyglot.text import Text
 
 
 def get_JSONfile(JSONfileName):
-        
     with open(JSONfileName) as f:
         content = json.load(f)
     
@@ -27,7 +27,6 @@ def get_JSONfile(JSONfileName):
 
 # polyglot function to extract location names
 def polyglotNER(textNews):
-
     locDic = {}
  #   print textNews
     text = Text(textNews)
@@ -47,9 +46,9 @@ def polyglotNER(textNews):
 
 
 # Mitie function to extract location names
-def MitieNER(tokens, ner):
+def MitieNER(tokens, ner_model):
     
-    entities = ner.extract_entities(tokens)
+    entities = ner_model.extract_entities(tokens)
     locDic = {}
         
     for e in entities:
@@ -105,29 +104,9 @@ def stanfordNER(text, st):
     return locDic
 
 
-def main(textTest, NER, lang):
-
-    
+def main(textTest, ner_model, NER, lang):
     Sent = list()
     Loc = list()
-    
-    print("loading NER model...")
-    if NER == 'Stanford': 
-        # Stanford setup
-        os.environ['CLASSPATH'] = '../stanford/stanford-ner.jar'  
-        if lang == 'es':
-            st = StanfordNERTagger('../stanford/stanford-spanish-corenlp-models-current/edu/stanford/nlp/models/ner/spanish.ancora.distsim.s512.crf.ser.gz')
-        elif lang == 'en': 
-            st = StanfordNERTagger('../stanford/stanford-spanish-corenlp-models-current/edu/stanford/nlp/models/ner/spanish.ancora.distsim.s512.crf.ser.gz')
-        
-    elif NER == 'Mitie':
-        sys.path.append('../MITIE-master/mitielib')
-        if lang == 'es':
-            ner = named_entity_extractor('../MITIE-models/spanish/ner_model.dat')
-        elif lang == 'en': 
-            ner = named_entity_extractor('../MITIE-models/english/ner_model.dat')
-        
-    
     
     # load the country names in different languages
     if lang == 'en': 
@@ -136,7 +115,6 @@ def main(textTest, NER, lang):
         JSONfileName = './data/spanish_country_names.json'
     elif lang == 'ar': 
         JSONfileName = './data/arabic_country_names.json'
-        
     
     try:
         countries = get_JSONfile(JSONfileName).keys()
@@ -153,7 +131,7 @@ def main(textTest, NER, lang):
         loc_stan= stanfordNER(text, st)
     elif NER == 'Mitie':   
         tokens = tokenize(str(text))
-        loc_stan= MitieNER(tokens, ner)
+        loc_stan= MitieNER(tokens, ner_model)
     else:
         loc_stan = polyglotNER(texttt)
     
